@@ -4,6 +4,8 @@
  * author: Paul Giannaros <paul@giannaros.org>, Gerald Senarclens de Grancy <oss@senarclens.eu>, Flaviu Tamas <tamas.flaviu@gmail.com>
  * revision: 3
  * kate-version: 3.13
+ * 
+ * Note: Unlike everything else, this is licenced under the LGPL
  */
 
 
