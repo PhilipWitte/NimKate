@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+
+<language
+	name="Nimrod"
+	version="1.0"
+	kateversion="2.4"
+	section="Sources"
+	extensions="*.nim"
+	mimetype="text/x-nimrod">
+	
+	<highlighting>
+		<list name="keywords">
+			<item> const </item>
+			<item> export </item>
+			<item> import </item>
+			<item> include </item>
+			<item> lamba </item>
+			<item> let </item>
+			<item> var </item>
+		</list>
+		
+		<list name="controls">
+			<item> and </item>
+			<item> assert </item> <!-- special -->
+			<item> asm </item>
+			<item> atomic </item>
+			<item> block </item>
+			<item> break </item>
+			<item> case </item>
+			<item> continue </item>
+			<item> discard </item>
+			<item> do </item>
+			<item> echo </item> <!-- special -->
+			<item> elif </item>
+			<item> else </item>
+			<item> end </item>
+			<item> except </item>
+			<item> finally </item>
+			<item> for </item>
+			<item> from </item>
+			<item> if </item>
+			<item> mixin </item>
+			<item> new </item> <!-- special -->
+			<item> of </item>
+			<item> or </item>
+			<item> raise </item>
+			<item> return </item>
+			<item> try </item>
+			<item> when </item>
+			<item> while </item>
+			<item> quit </item> <!-- special -->
+			<item> using </item>
+			<item> yield </item>
+		</list>
+		
+		<list name="operators">
+			<item> addr </item>
+			<item> as </item>
+			<item> cast </item>
+			<item> div </item>
+			<item> in </item>
+			<item> is </item>
+			<item> isnot </item>
+			<item> mod </item>
+			<item> not </item>
+			<item> notin </item>
+			<item> shl </item>
+			<item> shr </item>
+			<item> xor </item>
+		</list>
+		
+		<list name="types">
+			<item> array </item>
+			<item> bool </item>
+			<item> byte </item>
+			<item> cchar </item>
+			<item> cdouble </item>
+			<item> char </item>
+			<item> cfloat </item>
+			<item> cint </item>
+			<item> clong </item>
+			<item> cshort </item>
+			<item> cstring </item>
+			<item> cuint </item>
+			<item> distinct </item>
+			<item> enum </item>
+			<item> expr </item>
+			<item> float </item>
+			<item> float32 </item>
+			<item> float64 </item>
+			<item> generic </item>
+			<item> int </item>
+			<item> int8 </item>
+			<item> int16 </item>
+			<item> int32 </item>
+			<item> int64 </item>
+			<item> interface </item>
+			<item> object </item>
+			<item> openarray </item>
+			<item> pointer </item>
+			<item> set </item>
+			<item> seq </item>
+			<item> stmt </item>
+			<item> string </item>
+			<item> tuple </item>
+			<item> typedesc </item>
+			<item> uint </item>
+			<item> uint8 </item>
+			<item> uint16 </item>
+			<item> uint32 </item>
+			<item> uint64 </item>
+			<item> varargs </item>
+			<item> void </item>
+		</list>
+		
+		<list name="attrs">
+			<item> out </item>
+			<item> ptr </item>
+			<item> ref </item>
+			<item> shared </item>
+			<item> static </item>
+		</list>
+		
+		<list name="consts">
+			<item> false </item>
+			<item> inf </item>
+			<item> nil </item>
+			<item> true </item>
+		</list>
+		
+		<list name="others">
+			<item> result </item>
+		</list>
+		
+		<contexts>
+			<context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+				<keyword context="#stay" attribute="Keywords" String="keywords"/>
+				<keyword context="#stay" attribute="Controls" String="controls"/>
+				<keyword context="#stay" attribute="Symbols"  String="operators"/>
+				<keyword context="#stay" attribute="Types"    String="types"/>
+				<keyword context="#stay" attribute="Attrs"    String="attrs"/>
+				<keyword context="#stay" attribute="Others"   String="others"/>
+				<keyword context="#stay" attribute="Float"    String="consts"/>
+				
+				<RegExpr context="Proctar" attribute="Keywords" String="\bconverter\b\s*"/>
+				<RegExpr context="Proctar" attribute="Keywords" String="\biterator\b\s*"/>
+				<RegExpr context="Proctar" attribute="Keywords" String="\bmacro\b\s*"/>
+				<RegExpr context="Proctar" attribute="Keywords" String="\bmethod\b\s*"/>
+				<RegExpr context="Proctar" attribute="Keywords" String="\bproc\b\s*"/>
+				<RegExpr context="Proctar" attribute="Keywords" String="\btemplate\b\s*"/>
+				<RegExpr context="Typetar" attribute="Keywords" String="\btype\b\s*"/>
+				
+				<RegExpr context="#stay" attribute="Types"    String="\b_*[A-Z](?:\w|\._*[A-Z])*\b"/>
+				<RegExpr context="#stay" attribute="Funcs"    String="\b\w+\b\s*(?=(\[.*\]\s*)?\()"/>
+				<!-- TODO: Note done yet. These are for bracketless func calls... 
+				<RegExpr context="#stay" attribute="Funcs"    String="(^|:|;)\s*\b\w+\b\s*$"/>
+				<RegExpr context="#stay" attribute="Funcs"    String="(^|:|;)\s*\b\w+\b\s+(?=[^ ,:]+((,[^,:]*)+)?\s*$)"/>
+				<RegExpr context="#stay" attribute="Controls" String="(^|:|;)\s*\b\w+\b\s+(?=[^ ,:]+((,[^,:]*)+)?:\s*$)"/>
+				-->
+				
+				<DetectIdentifier/>
+				
+				<Detect2Chars context="Pragmatar" attribute="Pragmas" char="{" char1="."/>
+				<RegExpr context="Proptar" attribute="Brackets" String="\.(?!\d)"/>
+				<RegExpr context="#stay" attribute="Float" String="\.(?=\d)"/>
+				
+				<AnyChar context="#stay" attribute="Brackets" String="()[]{},:;"/>
+				<AnyChar context="#stay" attribute="Symbols"  String="+-*/=!@$%^&amp;&lt;&gt;|?"/>
+				
+				<Int        context="#stay"   attribute="Decimal"/>
+				<!-- FIXME: Doesn't seem to be needed
+				<Float      context="#stay"   attribute="Float"/>
+				-->
+				<HlCChar    context="#stay"   attribute="Char"/>
+				<DetectChar context="String"  attribute="String" char="&quot;"/>
+				<DetectChar context="Comment" attribute="Comment" char="#"/>
+			</context>
+			
+			<context name="String" attribute="String" lineEndContext="#pop">
+				<DetectChar context="#pop" attribute="String" char="&quot;"/>
+			</context>
+			
+			<context name="Comment" attribute="Comment" lineEndContext="#pop">
+				<LineContinue attribute="Comment" context="#stay"/>
+			</context>
+			
+			<context name="Typetar" attribute="TypeDefs" lineEndContext="#pop">
+				<DetectChar context="#stay" attribute="Brackets" char="."/>
+				<AnyChar context="#pop" attribute="Brackets" String="()[]{},:;"/>
+				<AnyChar context="#pop" attribute="Symbols"  String=" +-*/=!@$%^&amp;&lt;&gt;"/>
+			</context>
+			
+			<context name="Proctar" attribute="ProcDefs" lineEndContext="#pop">
+				<DetectChar context="QuoteProctar" attribute="ProcDefs" char="`"/>
+				<DetectChar context="#stay" attribute="Brackets" char="."/>
+				<AnyChar context="#pop" attribute="Brackets" String="()[]{},:;"/>
+				<AnyChar context="#pop" attribute="Symbols"  String=" +-*/=!@$%^&amp;&lt;&gt;"/>
+			</context>
+			
+			<context name="QuoteProctar" attribute="ProcDefs" lineEndContext="#pop">
+				<DetectChar context="#pop" attribute="ProcDefs" char="`"/>
+			</context>
+			
+			<context name="Pragmatar" attribute="Pragmas" lineEndContext="#stay">
+				<Detect2Chars context="#pop" attribute="Pragmas" char="." char1="}"/>
+			</context>
+			
+			<context name="Proptar" attribute="Props" lineEndContext="#pop">
+				<keyword context="#pop" attribute="Types" String="types"/>
+				<RegExpr context="#pop" attribute="Types" String="_*[A-Z]\w*"/>
+				<RegExpr context="#pop" attribute="Funcs" String="_*[a-z]\w*(?=\()"/>
+				<RegExpr context="#pop" attribute="Props" String="_*[a-z]\w*(?=\.)"/>
+				<RegExpr context="#pop" attribute="Props" String="_*[a-z]\w*"/> <!-- NOTE: no (?!\.) needed - order dependant -->
+				<RegExpr context="#pop" attribute="Brackets" String="\.+"/>
+			</context>
+		</contexts>
+		
+		<itemDatas>
+			<itemData name="Normal Text" defStyleNum="dsNormal"   spellChecking="false"/>
+			<itemData name="Keywords"    defStyleNum="dsKeyword"  spellChecking="false"/>
+			<itemData name="Controls"    defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Pragmas"     defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Types"       defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Props"       defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Funcs"       defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Attrs"       defStyleNum="dsDataType" spellChecking="false"/>
+			<itemData name="Others"      defStyleNum="dsOthers"   spellChecking="false"/>
+			
+			<itemData name="TypeDefs"    defStyleNum="dsDataType" spellChecking="false" bold="true"/>
+			<itemData name="ProcDefs"    defStyleNum="dsString"   spellChecking="false" bold="true"/>
+			
+			<itemData name="Brackets"    defStyleNum="dsKeyword"  spellChecking="false"/>
+			<itemData name="Symbols"     defStyleNum="dsComment"  spellChecking="false"/>
+			
+			<itemData name="Decimal"     defStyleNum="dsDecVal"   spellChecking="false"/>
+			<itemData name="Float"       defStyleNum="dsFloat"    spellChecking="false"/>
+			<itemData name="Char"        defStyleNum="dsChar"     spellChecking="false"/>
+			<itemData name="String"      defStyleNum="dsString"   spellChecking="false"/>
+			<itemData name="Comment"     defStyleNum="dsComment"  spellChecking="false"/>
+		</itemDatas>
+	</highlighting>
+
+	<general>
+		<comments>
+			<comment name="singleLine" start="#" position="beforewhitespace"/>
+		</comments>
+		<indentation mode="python"/>
+		<keywords casesensitive="0"/>
+	</general>
+	
+</language>
