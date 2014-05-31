@@ -4,7 +4,7 @@ Nimrod programming language support for Kate text editor.
 
 Install
 ---
-- **Nimrod**: Copy `nimrod.xml` to `~/.kde4/share/apps/katepart/syntax`
+- **Syntax**: Copy `nimrod.xml` to `~/.kde4/share/apps/katepart/syntax`
 - **Colors**: Kate > Settings > Configure Kate > Fonts & Colors > (Schema) Import...
 
 Screenshots
@@ -17,4 +17,4 @@ Screenshots
 
 License
 ---
-All code is released under WTFPL unless explicitly stated otherwise. See LICENSE for more information.
+All code is released under WTFPL unless explicitly stated otherwise. See [LICENSE](https://github.com/PhilipWitte/NimKate/blob/master/LICENSE) for more information.
