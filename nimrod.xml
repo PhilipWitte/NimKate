@@ -245,7 +245,7 @@
 		<comments>
 			<comment name="singleLine" start="#" position="beforewhitespace"/>
 		</comments>
-		<indentation mode="python"/>
+		<indentation mode="nimrod"/>
 		<keywords casesensitive="0"/>
 	</general>
 	
