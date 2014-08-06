@@ -1,6 +1,6 @@
 Kate ♥'s Nimrod
 ===
-Nimrod programming language support for Kate text editor.
+[Nimrod](http://nimrod-lang.org/) language support and colors for [Kate](http://www.kde.org/applications/utilities/kate/).
 
 Screenshots
 ---
@@ -22,4 +22,3 @@ Installation
 License
 ---
 All code is released under [WTFPL](http://www.wtfpl.net/) unless explicitly stated otherwise.
-See [LICENSE.txt](https://github.com/PhilipWitte/NimKate/blob/master/LICENSE.txt) for more information.
