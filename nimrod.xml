@@ -22,16 +22,19 @@
 		
 		<list name="controls">
 			<item> and </item>
-			<item> assert </item> <!-- special -->
+			<item> assert </item> <!-- system -->
 			<item> asm </item>
 			<item> atomic </item>
 			<item> block </item>
 			<item> break </item>
 			<item> case </item>
+			<item> compiles </item> <!-- system -->
 			<item> continue </item>
+			<item> defined </item> <!-- system -->
+			<item> definedinscope </item> <!-- system -->
 			<item> discard </item>
 			<item> do </item>
-			<item> echo </item> <!-- special -->
+			<item> echo </item> <!-- system -->
 			<item> elif </item>
 			<item> else </item>
 			<item> end </item>
@@ -41,15 +44,16 @@
 			<item> from </item>
 			<item> if </item>
 			<item> mixin </item>
-			<item> new </item> <!-- special -->
+			<item> new </item> <!-- system -->
 			<item> of </item>
 			<item> or </item>
 			<item> raise </item>
 			<item> return </item>
+			<item> sizeof </item> <!-- system -->
 			<item> try </item>
 			<item> when </item>
 			<item> while </item>
-			<item> quit </item> <!-- special -->
+			<item> quit </item> <!-- system -->
 			<item> using </item>
 			<item> yield </item>
 		</list>
