@@ -30,8 +30,9 @@
 			<item> case </item>
 			<item> compiles </item> <!-- system -->
 			<item> continue </item>
+			<item> declared </item> <!-- system -->
+			<item> declaredinscope </item> <!-- system -->
 			<item> defined </item> <!-- system -->
-			<item> definedinscope </item> <!-- system -->
 			<item> discard </item>
 			<item> do </item>
 			<item> echo </item> <!-- system -->
