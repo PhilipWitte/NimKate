@@ -225,7 +225,7 @@
 			<itemData name="Normal Text" defStyleNum="dsNormal"   spellChecking="false"/>
 			<itemData name="Keywords"    defStyleNum="dsKeyword"  spellChecking="false"/>
 			<itemData name="Controls"    defStyleNum="dsDataType" spellChecking="false"/>
-			<itemData name="Pragmas"     defStyleNum="dsOthers" spellChecking="false"/>
+			<itemData name="Pragmas"     defStyleNum="dsDataType" spellChecking="false"/>
 			<itemData name="Types"       defStyleNum="dsDataType" spellChecking="false"/>
 			<itemData name="Props"       defStyleNum="dsDataType" spellChecking="false"/>
 			<itemData name="Funcs"       defStyleNum="dsDataType" spellChecking="false"/>
@@ -250,6 +250,7 @@
 		<comments>
 			<comment name="singleLine" start="#" position="beforewhitespace"/>
 		</comments>
+		<folding indentationsensitive="true" />
 		<indentation mode="nimrod"/>
 		<keywords casesensitive="0"/>
 	</general>
