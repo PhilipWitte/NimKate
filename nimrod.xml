@@ -23,7 +23,7 @@ Improvements:
 	kateversion="2.4"
 	section="Sources"
 	extensions="*.nim"
-	mimetype="text/x-nimrod">
+	mimetype="text/x-nim">
 	
 	<highlighting>
 		<list name="keywords">
@@ -37,13 +37,13 @@ Improvements:
 		</list>
 		
 		<list name="controls">
-			<item> and </item>
 			<item> assert </item> <!-- system -->
 			<item> asm </item>
 			<item> atomic </item>
 			<item> block </item>
 			<item> break </item>
 			<item> case </item>
+			<item> cast </item>
 			<item> compiles </item> <!-- system -->
 			<item> continue </item>
 			<item> declared </item> <!-- system -->
@@ -63,8 +63,6 @@ Improvements:
 			<item> mixin </item>
 			<item> bind </item>
 			<item> new </item> <!-- system -->
-			<item> of </item>
-			<item> or </item>
 			<item> raise </item>
 			<item> return </item>
 			<item> sizeof </item> <!-- system -->
@@ -78,8 +76,8 @@ Improvements:
 		
 		<list name="operators">
 			<item> addr </item>
+			<item> and </item>
 			<item> as </item>
-			<item> cast </item>
 			<item> div </item>
 			<item> in </item>
 			<item> is </item>
@@ -87,6 +85,8 @@ Improvements:
 			<item> mod </item>
 			<item> not </item>
 			<item> notin </item>
+			<item> of </item>
+			<item> or </item>
 			<item> shl </item>
 			<item> shr </item>
 			<item> xor </item>
@@ -106,7 +106,6 @@ Improvements:
 			<item> cstring </item>
 			<item> cuint </item>
 			<item> distinct </item>
-			<item> enum </item>
 			<item> expr </item>
 			<item> float </item>
 			<item> float32 </item>
@@ -118,7 +117,6 @@ Improvements:
 			<item> int32 </item>
 			<item> int64 </item>
 			<item> interface </item>
-			<item> object </item>
 			<item> openarray </item>
 			<item> pointer </item>
 			<item> set </item>
@@ -178,12 +176,14 @@ Improvements:
 				<RegExpr context="Proctar" attribute="Keywords" String="\btemplate\b\s*"/>
 				<RegExpr context="Typetar" attribute="Keywords" String="\btype\b\s*"/>
 				<RegExpr context="Typetar" attribute="Keywords" String="\bconcept\b\s*"/>
+				<RegExpr context="Typetar" attribute="Keywords" String="\bobject\b\s*"/>
+				<RegExpr context="Typetar" attribute="Keywords" String="\benum\b\s*"/>
 				
                 <RegExpr context="#stay" attribute="Hex"      String="0[xX][0-9A-Fa-f][0-9A-Fa-f_]*('(([ui](8|16|32|64))|(f(32|64|128))|[ufd]))?"/>
                 <RegExpr context="#stay" attribute="Octal"    String="0o[0-7][0-7_]*('(([ui](8|16|32|64))|(f(32|64|128))|[ufd]))?"/>
                 <RegExpr context="#stay" attribute="Binary"   String="0[bB][01][01_]*('(([ui](8|16|32|64))|(f(32|64|128))|[ufd]))?"/>
 				<RegExpr context="#stay" attribute="Types"    String="\b_*[A-Z](?:\w|\._*[A-Z])*\b"/>
-				<RegExpr context="#stay" attribute="Funcs"    String="\b\w+\b\s*(?=(\[.*\]\s*)?\()"/>
+				<RegExpr context="#stay" attribute="Funcs"    String="\b\w+\b\s*(?=(\[.*\]\w*)?([\(]|([ ](?![,+\-*/=!^&amp;&lt;&gt;|?]|and|as|div|in|is|isnot|mod|notin|of|or|shl|shr|xor))))"/>
 				
 				<DetectIdentifier/>
 				
