@@ -15,8 +15,8 @@ Screenshots
 
 Installation
 ---
-- **Syntax**: Copy `nimrod.xml` to `~/.kde4/share/apps/katepart/syntax/`
-- **Indent**: Copy `nimrod.js` to `~/.kde4/share/apps/katepart/script/indentation/`
+- **Syntax**: Copy `nimrod.xml` to `~/.local/share/katepart5/syntax/`
+- **Indent**: Copy `nimrod.js` to `~/.local/share/katepart5/script/indentation/`
 - **Colors**: Kate > Settings > Configure Kate > Fonts & Colors > (Schema) Import...
 
 License
