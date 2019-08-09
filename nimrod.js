@@ -1,10 +1,14 @@
-/** kate-script
- * name: Nimrod
- * license: LGPL
- * author: Paul Giannaros <paul@giannaros.org>, Gerald Senarclens de Grancy <oss@senarclens.eu>, Flaviu Tamas <tamas.flaviu@gmail.com>
- * revision: 3
- * kate-version: 3.13
- * 
+var katescript = {
+    "name": "Nim",
+    "type": "indentation",
+    "author": "Paul Giannaros <paul@giannaros.org>, Gerald Senarclens de Grancy <oss@senarclens.eu>, Flaviu Tamas <tamas.flaviu@gmail.com>",
+    "license": "LGPL",
+    "revision": 4,
+    "kate-version": "5.1",
+    "indent-languages": ["Nim"],
+    "priority": 0
+};
+/*
  * Note: Unlike everything else, this is licenced under the LGPL
  */
 
